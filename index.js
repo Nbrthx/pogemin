@@ -26,7 +26,8 @@ app.post("/do", (req, res) => {
   var que = req.body.query
   pool.query(que, (err, row) => {
     rlog = JSON.stringify(row)
-  }
+    res.redirect("/")
+  })
 }
 app.post("/conn", (req, res) => {
   var dbhost = req.body.dbhost
@@ -47,6 +48,10 @@ app.post("/conn", (req, res) => {
   res.cookie("db", true, { signed: true })
   res.redirect("/")
 }
+app.post("/disconnect", (req, res) => {
+  res.cookie("db",null)
+  res.redirect("/")
+})
 
 app.listen(port, () => {
   console.log("Listen on port "+port)
