@@ -1,0 +1,20 @@
+{
+  "name": "pogemin",
+  "version": "1.0.0",
+  "description": "Database admin for postgresql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Niberthix",
+  "license": "ISC",
+  "keywords": [
+    "postgresql",
+    "database"
+  ],
+  "dependencies": {
+    "express": "^4.17.2",
+    "pg": "^8.7.1",
+    "ejs": "^3.1.6"
+  }
+}
