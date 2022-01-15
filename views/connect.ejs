@@ -4,6 +4,14 @@
   <title>Hello Database</title>
 </head>
 <body>
-  HELLO DATABASE
+  <form action="/conn" method="post">
+    <h1>Connect to Database</h1>
+    <input type="text" name="dbhost" placeholder="host" class="tone">
+    <input type="text" name="dbport" placeholder="port" class="ttwo">
+    <input type="text" name="dbuser" placeholder="username" class="tthr">
+    <input type="text" name="dbpass" placeholder="password" class="tthr">
+    <input type="text" name="dbname" placeholder="database" class="tthr">
+    <input type="submit" value="Connect">
+  </form>
 </body>
 </html>
