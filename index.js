@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 app.post("/do", (req, res) => {
   var que = req.body.query
   pool.query(que, (err, row) => {
-    rlog = JSON.stringify(row)
+    rlog = JSON.stringify(row, null, 2)
     res.redirect("/")
   })
 })
