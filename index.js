@@ -7,7 +7,8 @@ const bodyp = require("body-parser")
 const port = process.env.PORT || 3000
 
 var app = express()
-var pool
+var pool 
+var rlog = ""
 
 app.use(express.static(path.join(__dirname, "/public")))
 app.use(cookiep("secret"))
@@ -18,11 +19,14 @@ app.set("view engine", "ejs")
 
 app.get("/", (req, res) => {
   var db = res.signedCookies.db
-  if(db) res.render("index")
+  if(db) res.render("index", { rlog: rlog })
   else res.render("connect")
 })
 app.post("/do", (req, res) => {
-  
+  var que = req.body.query
+  pool.query(que, (err, row) => {
+    rlog = JSON.stringify(row)
+  }
 }
 app.post("/conn", (req, res) => {
   var dbhost = req.body.dbhost
@@ -39,6 +43,9 @@ app.post("/conn", (req, res) => {
     port: dbport,
     ssl: { rejectUnauthorized: false }
   })
+
+  res.cookie("db", true, { signed: true })
+  res.redirect("/")
 }
 
 app.listen(port, () => {
