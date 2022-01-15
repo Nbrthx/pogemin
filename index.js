@@ -18,7 +18,7 @@ app.set("views", path.join(__dirname,"/views"))
 app.set("view engine", "ejs")
 
 app.get("/", (req, res) => {
-  var db = res.signedCookies.db
+  var db = res.signedCookies.db || null
   if(db) res.render("index", { rlog: rlog })
   else res.render("connect")
 })
