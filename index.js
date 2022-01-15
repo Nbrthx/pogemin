@@ -28,7 +28,7 @@ app.post("/do", (req, res) => {
     rlog = JSON.stringify(row)
     res.redirect("/")
   })
-}
+})
 app.post("/conn", (req, res) => {
   var dbhost = req.body.dbhost
   var dbport = req.body.dbport
