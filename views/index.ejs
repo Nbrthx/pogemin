@@ -19,12 +19,12 @@
       <%= rlog %>
     </textarea>
   </div>
-  <table id="table"></table>
+  <div id="table"></div>
   <br>
   <script type="text/javascript">
     var mode = "console";
 
-    var table = document.getElementById("table")
+    var table = document.getElementById("table");
     table.style.display = "none";
     
     var rlog = <%= rlog %>;
@@ -43,6 +43,7 @@
     function tables(){
       var data = JSON.parse(rlog);
       
+      table.innerHTML += "<table>";
       if(data.command == "SELECT"){
         table.innerHTML += "<tr>";
         for(var th in data.rows[0]){
@@ -57,6 +58,7 @@
           table.innerHTML += "</tr>";
         }
       }
+      table.innerHTML += "</table>";
     }
     if(rlog != null && rlog != "") tables();
   </script>
