@@ -48,6 +48,8 @@ app.post("/conn", (req, res) => {
     ssl: { rejectUnauthorized: false }
   }
 
+  var pool = new Pool(conf)
+
   pool.query("SELECT NOW()", (err, row) => {
     if(!err){
       res.cookie("db", conf, { signed: true })
