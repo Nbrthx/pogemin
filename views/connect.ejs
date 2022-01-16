@@ -7,11 +7,11 @@
 <body>
   <form action="/conn" method="post">
     <h1>Connect to Database</h1>
-    <input type="text" name="dbhost" placeholder="host" class="tone"><br>
-    <input type="number" name="dbport" placeholder="port" class="ttwo"><br>
-    <input type="text" name="dbuser" placeholder="username" class="tthr"><br>
-    <input type="password" name="dbpass" placeholder="password" class="tthr"><br>
-    <input type="text" name="dbname" placeholder="database" class="tthr"><br>
+    <input type="text" name="dbhost" placeholder="host" class="tone" required><br>
+    <input type="number" name="dbport" placeholder="port" class="ttwo" required><br>
+    <input type="text" name="dbuser" placeholder="username" class="tthr" required><br>
+    <input type="password" name="dbpass" placeholder="password" class="tthr" required><br>
+    <input type="text" name="dbname" placeholder="database" class="tthr" required><br>
     <input type="submit" value="Connect">
   </form>
 </body>
