@@ -42,17 +42,17 @@
       var data = <%- rlog %>;
       var text = "";
       
-      text += "<table>";
+      text += "<table style='border-collapse: collapse;'>";
       if(data.command == "SELECT"){
         text += "<tr>";
         for(let th in data.rows[0]){
           text += "<th style='border: 1px solid #000;'>"+th+"</th>";
         }
         text += "</tr>";
-        for(let row in data.rows){
+        for(let row of data.rows){
           text += "<tr>";
-          for(let dt of row){
-            text += "<td style='border: 1px solid #000;'>"+dt+"</td>";
+          for(let dt in row){
+            text += "<td style='border: 1px solid #000;'>"+row[dt]+"</td>";
           }
           text += "</tr>";
         }
