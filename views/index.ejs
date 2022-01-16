@@ -46,13 +46,13 @@
       if(data.command == "SELECT"){
         text += "<tr>";
         for(let th in data.rows[0]){
-          text += "<th style='border: 1px;'>"+th+"</th>";
+          text += "<th style='border: 1px solid #000;'>"+th+"</th>";
         }
         text += "</tr>";
         for(let row in data.rows){
           text += "<tr>";
-          for(let dt in row){
-            text += "<td style='border: 1px;'>"+row[dt]+"</td>";
+          for(let dt of row){
+            text += "<td style='border: 1px solid #000;'>"+dt+"</td>";
           }
           text += "</tr>";
         }
