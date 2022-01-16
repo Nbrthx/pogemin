@@ -7,11 +7,13 @@
   <form action="/do" method="post">
     <h1>Query Zone</h1>
     <a href="/disconnect">Disconn</a>
-    <input style="width: 100%; height: 500px;" type="text" name="query"><br>
+    <textarea style="resize: none; width: 100%; height: 500px;" name="query"></textarea><br>
     <input type="submit" value="Submit"><br>
     <br>
     <b>output:</b> <br>
-    <%= rlog %>
+    <textarea style="resize: none; width: 100%; height: 500px;" readonly>
+      <%= rlog %>
+    </textarea>
     <br>
     
   </form>
