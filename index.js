@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
   else res.render("connect")
 })
 app.post("/do", (req, res) => {
-  que = req.body.query
+  que = (req.body.query).replace(/\'/g, '"')
   var pool = new Pool(req.signedCookies.db)
 
   pool.query(que, (err, row) => {
