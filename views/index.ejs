@@ -39,10 +39,10 @@
     }
 
     function tables(){
-      var data = JSON.parse("<%= rlog %>");
+      var data = JSON.parse(<%= rlog %>);
       var text = "";
       
-      table.innerHTML += "<table>";
+      text += "<table>";
       if(data.command == "SELECT"){
         text += "<tr>";
         for(var th in data.rows[0]){
