@@ -50,7 +50,7 @@ app.post("/conn", (req, res) => {
 
   pool.query("SELECT NOW()", (err, row) => {
     if(!err){
-      res.cookie("db", pool, { signed: true })
+      res.cookie("db", conf, { signed: true })
       res.redirect("/")
     }
   })
