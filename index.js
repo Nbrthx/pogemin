@@ -45,7 +45,7 @@ app.post("/conn", (req, res) => {
     ssl: { rejectUnauthorized: false }
   })
 
-  res.cookie("db", true, { signed: true })
+  res.cookie("db", dbname, { signed: true })
   res.redirect("/")
 })
 app.post("/disconnect", (req, res) => {
