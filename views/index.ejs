@@ -28,11 +28,11 @@
 
     var table = document.getElementById("table")
     table.style.display = "none";
-    var show = document.getElementById(mode);
     
     var rlog = <%= rlog %>;
 
     function switch_mode() {
+      var show = document.getElementById(mode);
       show.style.display = "none";
 
       if(mode == "console") mode = "table";
