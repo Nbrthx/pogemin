@@ -42,23 +42,24 @@
 
     function tables(){
       var data = JSON.parse(rlog);
+      var text = ""
       
       table.innerHTML += "<table>";
       if(data.command == "SELECT"){
-        table.innerHTML += "<tr>";
+        text += "<tr>";
         for(var th in data.rows[0]){
-          table.innerHTML += "<th>"+th+"</th>";
+          text += "<th>"+th+"</th>";
         }
-        table.innerHTML += "</tr>";
+        text += "</tr>";
         for(var row in data.rows){
-          table.innerHTML += "<tr>";
+          text += "<tr>";
           for(var td in row){
-            table.innerHTML += "<td>"+row[td]+"</td>";
+            text += "<td>"+row[td]+"</td>";
           }
-          table.innerHTML += "</tr>";
+          text += "</tr>";
         }
       }
-      table.innerHTML += "</table>";
+      text += "</table>";
     }
     if(rlog != null && rlog != "") tables();
   </script>
