@@ -7,7 +7,7 @@ const bodyp = require("body-parser")
 const port = process.env.PORT || 3000
 
 var app = express()
-var pool 
+var que = ""
 var rlog = ""
 
 app.use(express.static(path.join(__dirname, "/public")))
@@ -19,11 +19,14 @@ app.set("view engine", "ejs")
 
 app.get("/", (req, res) => {
   var db = req.signedCookies.db
-  if(db) res.render("index", { rlog: rlog })
+  if(db)
+    res.render("index", { rlog: rlog, que: que })
   else res.render("connect")
 })
 app.post("/do", (req, res) => {
-  var que = req.body.query
+  que = req.body.query
+  var pool = req.signedCookies.db
+
   pool.query(que, (err, row) => {
     rlog = JSON.stringify(row, null, 2)
     res.redirect("/")
@@ -36,7 +39,7 @@ app.post("/conn", (req, res) => {
   var dbpass = req.body.dbpass
   var dbname = req.body.dbname
 
-  pool = new Pool({
+ var pool = new Pool({
     user: dbuser,
     host: dbhost,
     database: dbname,
@@ -45,8 +48,12 @@ app.post("/conn", (req, res) => {
     ssl: { rejectUnauthorized: false }
   })
 
-  res.cookie("db", dbname, { signed: true })
-  res.redirect("/")
+  pool.query("SELECT NOW()", (err, row) => {
+    if(!err){
+      res.cookie("db", pool, { signed: true })
+      res.redirect("/")
+    }
+  })
 })
 app.get("/disconnect", (req, res) => {
   res.cookie("db",null)
