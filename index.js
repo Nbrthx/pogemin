@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 })
 app.post("/do", (req, res) => {
   que = req.body.query
-  var pool = req.signedCookies.db
+  var pool = new Pool(req.signedCookies.db)
 
   pool.query(que, (err, row) => {
     rlog = JSON.stringify(row, null, 2)
@@ -39,14 +39,14 @@ app.post("/conn", (req, res) => {
   var dbpass = req.body.dbpass
   var dbname = req.body.dbname
 
- var pool = new Pool({
+ var conf = {
     user: dbuser,
     host: dbhost,
     database: dbname,
     password: dbpass,
     port: dbport,
     ssl: { rejectUnauthorized: false }
-  })
+  }
 
   pool.query("SELECT NOW()", (err, row) => {
     if(!err){
