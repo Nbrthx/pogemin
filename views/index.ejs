@@ -42,17 +42,17 @@
       var data = <%- rlog %>;
       var text = "";
       
-      text += "<table style='border: 1px;'>";
+      text += "<table>";
       if(data.command == "SELECT"){
         text += "<tr>";
         for(var th in data.rows[0]){
-          text += "<th>"+th+"</th>";
+          text += "<th style='border: 1px;'>"+th+"</th>";
         }
         text += "</tr>";
         for(var row in data.rows){
           text += "<tr>";
           for(var td in row){
-            text += "<td>"+row[String(td)]+"</td>";
+            text += "<td style='border: 1px;'>"+row[td]+"</td>";
           }
           text += "</tr>";
         }
