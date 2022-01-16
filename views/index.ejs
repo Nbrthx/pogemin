@@ -45,13 +45,13 @@
       text += "<table>";
       if(data.command == "SELECT"){
         text += "<tr>";
-        for(var th in data.rows[0]){
+        for(let th in data.rows[0]){
           text += "<th style='border: 1px;'>"+th+"</th>";
         }
         text += "</tr>";
-        for(var row in data.rows){
+        for(let row in data.rows){
           text += "<tr>";
-          for(var dt in row){
+          for(let dt in row){
             text += "<td style='border: 1px;'>"+row[dt]+"</td>";
           }
           text += "</tr>";
