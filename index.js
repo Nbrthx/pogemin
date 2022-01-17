@@ -21,7 +21,13 @@ app.get("/", (req, res) => {
   var db = req.signedCookies.db
   if(db)
     res.render("index", { rlog: rlog, que: que })
-  else res.render("connect")
+  else res.redirect("connect")
+})
+app.get("/ui", (req, res) => {
+  res.render("ui")
+})
+app.get("/connect", (req, res) => {
+  res.render("connect")
 })
 app.post("/do", (req, res) => {
   que = (req.body.query).replace(/\'/g, '"')
