@@ -27,8 +27,10 @@ app.get("/ui", (req, res) => {
   var db = req.signedCookies.db
   var pool = new Pool(db)
   if(db && !req.body.dir)
-    pool.query("SELECT table_name FROM information_schema.tables WHERE table_schema='public'", (err, row) => {
-      res.render("ui", { data: row })
+    pool.query("SELECT table_name FROM information_schema.tables "+
+      "WHERE table_schema='public'", (err, row) => {
+      var rows = JSON.stringify(row)
+      res.render("ui", { data: rows })
     })
   else res.redirect("connect")
 })
