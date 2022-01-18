@@ -14,28 +14,24 @@
   <script type="text/javascript">
     var table = document.getElementById("table");
 
+    var data = <%- data %>;
+    var dir = "<%- dir %>";
+
     function tables(){
-      var data = <%- data %>;
       var text = "";
       
-      text += "<table>";
-      text += "<tr>";
-      for(let th in data.rows[0]){
-        text += "<th>"+th+"</th>";
-      }
-      text += "</tr>";
+      text += "Public Table";
+      text += "<ul>";
       for(let row of data.rows){
-        text += "<tr>";
-        for(let dt in row){
-          text += "<td>"+row[dt]+"</td>";
-        }
-        text += "</tr>";
+        text += "<li>";
+        text += "<a href='ui?dir="+row.table_name+"'>"+row[dt]+"</a>";
+        text += "</li>";
       }
-      text += "</table>";
+      text += "</ul>";
 
       table.innerHTML = text;
     }
-    tables();
+    if(dir != "") tables();
   </script>
 </body>
 </html>
