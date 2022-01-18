@@ -29,7 +29,7 @@ app.get("/ui", (req, res) => {
 app.get("/connect", (req, res) => {
   var db = req.signedCookies.db
   if(!db)
-    res.redirect("index")
+    res.redirect("/")
   else res.render("connect")
 })
 app.post("/do", (req, res) => {
