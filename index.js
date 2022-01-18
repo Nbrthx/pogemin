@@ -30,7 +30,7 @@ app.get("/connect", (req, res) => {
   res.render("connect")
 })
 app.post("/do", (req, res) => {
-  que = (req.body.query).replace(/\'/g, '"')
+  que = (req.body.query).replace(/\"/g, "'")
   var pool = new Pool(req.signedCookies.db)
 
   pool.query(que, (err, row) => {
@@ -60,6 +60,9 @@ app.post("/conn", (req, res) => {
     if(!err){
       res.cookie("db", conf, { signed: true })
       res.redirect("/")
+    }else{
+      res.redirect("connect")
+      pool.end()
     }
   })
 })
