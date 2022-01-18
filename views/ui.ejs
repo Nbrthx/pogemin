@@ -21,7 +21,7 @@
     function lists(){
       var text = "";
       
-      text += "Public Table<br>";
+      text += "<b>Public Table</b><br>";
       for(let row of data.rows){
         text += "- <a href='ui?dir="+row.table_name+"'>"+row.table_name+"</a><br>";
       }
@@ -32,6 +32,7 @@
     function tables(){
       var text = "";
       
+      text += "<a href='ui'>Back</a>";
       text += "<table>";
       
       text += "<tr>";
