@@ -35,7 +35,7 @@ app.get("/ui", (req, res) => {
 })
 app.get("/connect", (req, res) => {
   var db = req.signedCookies.db
-  if(!db)
+  if(db)
     res.redirect("/")
   else res.render("connect")
 })
