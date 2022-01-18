@@ -44,8 +44,8 @@
       text += "</tr>";
       for(let row of data.rows){
         text += "<tr>";
-        for(let dt of row){
-          text += "<td>"+dt+"</td>";
+        for(let dt in row){
+          text += "<td>"+row[dt]+"</td>";
         }
         text += "</tr>";
       }
