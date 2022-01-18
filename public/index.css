@@ -2,6 +2,8 @@
   margin: 0;
   left: 0;
   right: 0;
+  top: 0;
+  bottom: 0;
 }
 body{
   background: #457;
@@ -10,6 +12,7 @@ body{
 }
 #content{
   padding: 8px;
+  width: 100%-8px;
 }
 table{
   border-collapse: collapse;
