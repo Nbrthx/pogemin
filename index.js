@@ -24,7 +24,14 @@ app.get("/", (req, res) => {
   else res.redirect("connect")
 })
 app.get("/ui", (req, res) => {
-  res.render("ui")
+  var db = req.signedCookies.db
+  var pool = new Pool(db)
+  if(db && !req.body.dir)
+    pool.query("SELECT table_name from information_schema.tables "+
+      "where table_schema='public'", (err, row) => {
+      res.render("ui", { data: row })
+    }
+  else res.redirect("connect")
 })
 app.get("/connect", (req, res) => {
   var db = req.signedCookies.db
