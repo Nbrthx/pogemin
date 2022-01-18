@@ -30,7 +30,7 @@ app.get("/ui", (req, res) => {
     pool.query("SELECT table_name from information_schema.tables "+
       "where table_schema='public'", (err, row) => {
       res.render("ui", { data: row })
-    }
+    })
   else res.redirect("connect")
 })
 app.get("/connect", (req, res) => {
