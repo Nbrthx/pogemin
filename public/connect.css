@@ -20,13 +20,13 @@ body{
 }
 input[type=button], input[type=submit]{
   padding: 8px 16px;
-  background: #260;
+  background: #235;
   color: #2f4;
   border: 1px solid #132;
   border-radius: 8px;
 }
 input[type=text], input[type=password], input[type=number]{
-  width: 228px;
+  width: 260px;
   background: #235;
   border: 1px solid #132;
   color: #2f4;
