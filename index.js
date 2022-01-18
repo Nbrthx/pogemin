@@ -27,7 +27,9 @@ app.get("/ui", (req, res) => {
   res.render("ui")
 })
 app.get("/connect", (req, res) => {
-  res.render("connect")
+  if(!db)
+    res.redirect("index")
+  else res.render("connect")
 })
 app.post("/do", (req, res) => {
   que = (req.body.query).replace(/\"/g, "'")
