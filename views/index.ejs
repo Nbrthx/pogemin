@@ -9,13 +9,13 @@
   <form action="/do" method="post">
     <h1>Query Zone</h1>
     <a href="/disconnect">Disconn</a>
-    <textarea style="resize: none; width: 100%; height: 500px;" name="query"><%= que %></textarea><br>
+    <textarea name="query"><%= que %></textarea><br>
     <input type="submit" value="Submit"><br>
     <br>
     <input type="button" value="Toggle Mode" onclick="switch_mode()"> <br>
-    <b>output:</b> <br>
+    <b>output ( <label id="mode"></label> ):</b> <br>
     <div id="console">
-      <textarea style="resize: none; width: 100%; height: 500px;" readonly>
+      <textarea readonly>
         <%= rlog %>
       </textarea>
     </div>
@@ -23,10 +23,9 @@
     <br>
   </form>
   <script type="text/javascript">
-    var mode = "console";
+    var mode = "table";
 
     var table = document.getElementById("table");
-    table.style.display = "none";
 
     function switch_mode() {
       var show = document.getElementById(mode);
@@ -37,7 +36,10 @@
       
       show = document.getElementById(mode);
       show.style.display = "block";
+
+      document.getElementById("mode").innerHTML = mode;
     }
+    switch_mode();
 
     function tables(){
       var data = <%- rlog %>;
