@@ -1,7 +1,7 @@
 body{
   background: #456;
   width: 100%;
-  color: #dfe;
+  color: #fff;
   margin: 8px;
 }
 table{
@@ -39,5 +39,5 @@ tr{
   background: #fff;
 }
 tr:nth-child(even) {
-  background: #efe;
+  background: #eff;
 }
