@@ -1,24 +1,27 @@
 body{
-  background: #4ae;
+  background: #6ac;
   color: #fff;
 }
 table{
   border-collapse: collapse;
 }
 th, td{
-  border: 1px solid #245;
+  border: 1px solid #235;
   padding: 8px 16px;
+  background: #fff;
+  color: #235;
 }
 textarea{
-  background: #245;
+  background: #235;
   color: #2f4;
-  border: 1px solid #28f;
+  border: 1px solid #467;
+  border-radius: 8px;
 }
 input[type=button], input[type=submit]{
   padding: 8px 16px;
-  background: #245;
+  background: #235;
   color: #2f4;
-  border: 1px solid #28f;
+  border: 1px solid #467;
   border-radius: 8px;
 }
   
