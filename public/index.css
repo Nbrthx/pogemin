@@ -1,12 +1,11 @@
 body{
   background: #457;
-  width: 100vw;
   color: #fff;
   margin: 0;
 }
 #content{
   width: 100%;
-  margin: 8px 16px;
+  padding: 8px 16px;
 }
 table{
   border-collapse: collapse;
