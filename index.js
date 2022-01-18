@@ -26,7 +26,6 @@ app.get("/", (req, res) => {
 app.get("/ui", (req, res) => {
   var db = req.signedCookies.db
   var dir = req.query.dir
-  console.log(dir)
   var pool = new Pool(db)
   if(db && !dir)
     pool.query("SELECT table_name "+
@@ -39,6 +38,7 @@ app.get("/ui", (req, res) => {
     pool.query("SELECT * "+
       "FROM "+dir, (err, row) => {
       var rows = JSON.stringify(row)
+      console.log(row)
       res.render("ui", { data: rows, dir: "true" })
     })
   else res.redirect("connect")
