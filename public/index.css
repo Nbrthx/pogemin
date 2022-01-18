@@ -3,6 +3,7 @@ body{
   width: 100%;
   color: #fff;
   margin: 0;
+  padding: 8px;
 }
 table{
   border-collapse: collapse;
