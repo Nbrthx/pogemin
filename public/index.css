@@ -26,6 +26,9 @@ input[type=button], input[type=submit]{
   border: 1px solid #132;
   border-radius: 8px;
 }
+a{
+  color: #2f4;
+}
 #table{
   width: 100%;
   overflow-x: scroll;
