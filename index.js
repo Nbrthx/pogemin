@@ -26,6 +26,7 @@ app.get("/", (req, res) => {
 app.get("/ui", (req, res) => {
   var db = req.signedCookies.db
   var dir = req.query.dir
+  console.log(dir)
   var pool = new Pool(db)
   if(db && !dir)
     pool.query("SELECT table_name "+
