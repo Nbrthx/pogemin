@@ -20,7 +20,7 @@ body{
 }
 input[type=button], input[type=submit]{
   padding: 8px 16px;
-  background: #235;
+  background: #260;
   color: #2f4;
   border: 1px solid #132;
   border-radius: 8px;
@@ -35,10 +35,10 @@ input[type=text], input[type=password], input[type=number]{
   margin-bottom: 8px;
 }
 input[name=dbhost]{
-  width: 180px;
+  width: 164px;
 }
 input[name=dbport]{
-  width: 80px;
+  width: 64px;
 }
 a{
   color: #2f4;
