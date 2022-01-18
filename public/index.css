@@ -10,10 +10,10 @@ body{
   color: #fff;
   margin: 0;
   padding: 8px;
-  width: 100%;
+  width: auto;
 }
 #content{
-  width: 100%;
+  width: auto;
   position: absolute;
   padding: 8px;
 }
