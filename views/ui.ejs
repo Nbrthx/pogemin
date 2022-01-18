@@ -3,43 +3,19 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello Database</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
-  <form action="/do" method="post">
-    <h1>Query Zone</h1>
+    <h1>Database Manager</h1>
     <a href="/disconnect">Disconn</a>
-    <textarea style="resize: none; width: 100%; height: 500px;" name="query"><%= que %></textarea><br>
-    <input type="submit" value="Submit"><br>
-    <br>
-    <input type="button" value="Toggle Mode" onclick="switch_mode()"> <br>
-    <b>output:</b> <br>
-    <div id="console">
-      <textarea style="resize: none; width: 100%; height: 500px;" readonly>
-        <%= rlog %>
-      </textarea>
-    </div>
     <div id="table"></div>
     <br>
   </form>
   <script type="text/javascript">
-    var mode = "console";
-
     var table = document.getElementById("table");
-    table.style.display = "none";
-
-    function switch_mode() {
-      var show = document.getElementById(mode);
-      show.style.display = "none";
-
-      if(mode == "console") mode = "table";
-      else mode = "console";
-      
-      show = document.getElementById(mode);
-      show.style.display = "block";
-    }
 
     function tables(){
-      var data = <%- rlog %>;
+      var data = <%- data %>;
       var text = "";
       
       text += "<table style='border-collapse: collapse;'>";
