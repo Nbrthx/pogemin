@@ -6,22 +6,24 @@
   <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
-  <form action="/do" method="post">
-    <h1>Query Zone</h1>
-    <a href="/disconnect">Disconn</a>
-    <textarea name="query"><%= que %></textarea><br>
-    <input type="submit" value="Submit"><br>
-    <br>
-    <input type="button" value="Toggle Mode" onclick="switch_mode()"> <br>
-    <b>output ( <label id="mode"></label> ):</b> <br>
-    <div id="console">
-      <textarea readonly>
-        <%= rlog %>
-      </textarea>
-    </div>
-    <div id="table"></div>
-    <br>
-  </form>
+  <div id="content">
+    <form action="/do" method="post">
+      <h1>Query Zone</h1>
+      <a href="/disconnect">Disconn</a>
+      <textarea name="query"><%= que %></textarea><br>
+      <input type="submit" value="Submit"><br>
+      <br>
+      <input type="button" value="Toggle Mode" onclick="switch_mode()"> <br>
+      <b>output ( <label id="mode"></label> ):</b> <br>
+      <div id="console">
+        <textarea readonly>
+          <%= rlog %>
+        </textarea>
+      </div>
+      <div id="table"></div>
+      <br>
+    </form>
+  </div>
   <script type="text/javascript">
     var mode = "table";
 
