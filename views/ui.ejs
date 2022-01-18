@@ -8,6 +8,7 @@
 <body>
     <h1>Database Manager</h1>
     <a href="/disconnect">Disconn</a><br>
+    <br>
     <div id="table"></div>
     <br>
   </form>
@@ -20,9 +21,9 @@
     function lists(){
       var text = "";
       
-      text += "Public Table";
+      text += "Public Table<br>";
       for(let row of data.rows){
-        text += "- <a href='ui?dir="+row.table_name+"'>"+row.table_name+"</a>";
+        text += "- <a href='ui?dir="+row.table_name+"'>"+row.table_name+"</a><br>";
       }
 
       table.innerHTML = text;
