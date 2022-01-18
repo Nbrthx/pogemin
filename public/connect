@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+body{
+  background: #457;
+  color: #fff;
+  margin: 0;
+  padding: 8px;
+  width: auto;
+}
+#content{
+  width: auto;
+  position: absolute;
+  margin: 8px;
+  right: 4px;
+}
+input[type=button], input[type=submit]{
+  padding: 8px 16px;
+  background: #235;
+  color: #2f4;
+  border: 1px solid #132;
+  border-radius: 8px;
+}
+#ninput, #hinput, #pinput{
+  width: 250px;
+  float: left;
+  background: #235;
+  border: 1px solid #132;
+  color: #2f4;
+  border-radius: 8px;
+}
+#hinput{
+  width: 200px;
+}
+#pinput{
+  width: 50px;
+a{
+  color: #2f4;
+}
