@@ -10,3 +10,10 @@ textarea{
   color: #2f4;
   border: 1px solid #28f;
 }
+input[type=button]{
+  background: #245;
+  color: #2f4;
+  border: 1px solid #28f;
+  border-radius: 16px;
+}
+  
