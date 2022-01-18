@@ -21,13 +21,9 @@
       var text = "";
       
       text += "Public Table";
-      text += "<ul>";
       for(let row of data.rows){
-        text += "<li>";
-        text += "<a href='ui?dir="+row.table_name+"'>"+row.table_name+"</a>";
-        text += "</li>";
+        text += "- <a href='ui?dir="+row.table_name+"'>"+row.table_name+"</a>";
       }
-      text += "</ul>";
 
       table.innerHTML = text;
     }
