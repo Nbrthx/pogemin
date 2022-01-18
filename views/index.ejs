@@ -41,29 +41,31 @@
     }
     switch_mode();
 
+    var data = <%- rlog %>;
+
     function tables(){
-      var data = <%- rlog %>;
       var text = "";
       
-      text += "<table style='border-collapse: collapse;'>";
-      if(data.command == "SELECT"){
+      text += "<table>";
+      
+      text += "<tr>";
+      for(let th in data.rows[0]){
+        text += "<th>"+th+"</th>";
+      }
+      text += "</tr>";
+      for(let row of data.rows){
         text += "<tr>";
-        for(let th in data.rows[0]){
-          text += "<th style='border: 1px solid #000;'>"+th+"</th>";
+        for(let dt in row){
+          text += "<td>"+row[dt]+"</td>";
         }
         text += "</tr>";
-        for(let row of data.rows){
-          text += "<tr>";
-          for(let dt in row){
-            text += "<td style='border: 1px solid #000;'>"+row[dt]+"</td>";
-          }
-          text += "</tr>";
-        }
       }
       text += "</table>";
+
       table.innerHTML = text;
     }
-    tables();
+    if(data.command == "SELECT") tables();
+    else table.innerHTML = data.rowCount+" changed";
   </script>
 </body>
 </html>
