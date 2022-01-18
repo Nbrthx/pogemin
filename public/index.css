@@ -8,7 +8,6 @@ table{
   border-collapse: collapse;
 }
 th, td{
-  border: 1px solid #fff;
   padding: 8px 16px;
   color: #235;
 }
@@ -37,6 +36,7 @@ a{
 }
 tr{
   background: #fff;
+  border-radius: 8px;
 }
 tr:nth-child(even) {
   background: #eff;
