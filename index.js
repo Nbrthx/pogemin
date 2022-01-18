@@ -25,12 +25,13 @@ app.get("/", (req, res) => {
 })
 app.get("/ui", (req, res) => {
   var db = req.signedCookies.db
+  var dir = req.body.dir
   var pool = new Pool(db)
-  if(db && !req.body.dir)
+  if(db && !dir)
     pool.query("SELECT table_name FROM information_schema.tables "+
       "WHERE table_schema='public'", (err, row) => {
       var rows = JSON.stringify(row)
-      res.render("ui", { data: rows })
+      res.render("ui", { data: rows, dir: "" })
     })
   else res.redirect("connect")
 })
