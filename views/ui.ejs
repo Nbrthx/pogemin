@@ -19,21 +19,20 @@
       var text = "";
       
       text += "<table>";
-      if(data.command == "SELECT"){
+      text += "<tr>";
+      for(let th in data.rows[0]){
+        text += "<th>"+th+"</th>";
+      }
+      text += "</tr>";
+      for(let row of data.rows){
         text += "<tr>";
-        for(let th in data.rows[0]){
-          text += "<th>"+th+"</th>";
+        for(let dt in row){
+          text += "<td>"+row[dt]+"</td>";
         }
         text += "</tr>";
-        for(let row of data.rows){
-          text += "<tr>";
-          for(let dt in row){
-            text += "<td>"+row[dt]+"</td>";
-          }
-          text += "</tr>";
-        }
       }
       text += "</table>";
+
       table.innerHTML = text;
     }
     tables();
