@@ -33,13 +33,13 @@ app.get("/ui", (req, res) => {
       "FROM information_schema.tables "+
       "WHERE table_schema='public'", (err, row) => {
       var rows = JSON.stringify(row)
-      res.render("ui", { data: rows, dir: "true" })
+      res.render("ui", { data: rows, dir: "false" })
     })
   else if(db && dir)
     pool.query("SELECT * "+
       "FROM "+dir, (err, row) => {
       var rows = JSON.stringify(row)
-      res.render("ui", { data: rows, dir: "false" })
+      res.render("ui", { data: rows, dir: "true" })
     })
   else res.redirect("connect")
 })
