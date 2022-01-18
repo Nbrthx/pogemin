@@ -27,6 +27,7 @@ app.get("/ui", (req, res) => {
   res.render("ui")
 })
 app.get("/connect", (req, res) => {
+  var db = req.signedCookies.db
   if(!db)
     res.redirect("index")
   else res.render("connect")
