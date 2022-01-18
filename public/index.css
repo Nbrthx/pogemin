@@ -9,9 +9,10 @@ body{
   background: #457;
   color: #fff;
   margin: 0;
+  padding: 8px;
 }
 #content{
-  width: 100vw;
+  width: 100%;
   position: absolute;
 }
 table{
