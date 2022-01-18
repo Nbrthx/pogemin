@@ -1,5 +1,5 @@
 body{
-  background: #476;
+  background: #456;
   width: 100%;
   color: #dfe;
   margin: 8px;
@@ -10,7 +10,6 @@ table{
 th, td{
   border: 1px solid #235;
   padding: 8px 16px;
-  background: #fff;
   color: #235;
 }
 textarea{
@@ -18,6 +17,9 @@ textarea{
   color: #2f4;
   border: 1px solid #132;
   border-radius: 8px;
+  resize: none;
+  width: 100%;
+  height: 200px;
 }
 input[type=button], input[type=submit]{
   padding: 8px 16px;
@@ -32,4 +34,10 @@ a{
 #table{
   width: 100%;
   overflow-x: scroll;
+}
+tr{
+  background: #fff;
+}
+tr:nth-child(even) {
+  background: #efe;
 }
