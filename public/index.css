@@ -15,7 +15,7 @@ body{
 #content{
   width: auto;
   position: absolute;
-  padding: 8px;
+  margin: 8px;
 }
 table{
   border-collapse: collapse;
