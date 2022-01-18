@@ -17,7 +17,7 @@
     var data = <%- data %>;
     var dir = "<%- dir %>";
 
-    function tables(){
+    function lists(){
       var text = "";
       
       text += "Public Table";
@@ -31,7 +31,30 @@
 
       table.innerHTML = text;
     }
-    if(dir == "") tables();
+
+    function tables(){
+      var text = "";
+      
+      text += "<table>";
+      
+      text += "<tr>";
+      for(let th in data.rows[0]){
+        text += "<th>"+th+"</th>";
+      }
+      text += "</tr>";
+      for(let row of data.rows){
+        text += "<tr>";
+        for(let dt of row){
+          text += "<td>"+dt+"</td>";
+        }
+        text += "</tr>";
+      }
+      text += "</table>";
+      table.innerHTML = text;
+    }
+    
+    if(dir == "") lists();
+    else tables();
   </script>
 </body>
 </html>
