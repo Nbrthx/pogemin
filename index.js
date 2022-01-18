@@ -28,10 +28,17 @@ app.get("/ui", (req, res) => {
   var dir = req.query.dir
   var pool = new Pool(db)
   if(db && !dir)
-    pool.query("SELECT table_name FROM information_schema.tables "+
+    pool.query("SELECT table_name "+
+      "FROM information_schema.tables "+
       "WHERE table_schema='public'", (err, row) => {
       var rows = JSON.stringify(row)
       res.render("ui", { data: rows, dir: "" })
+    })
+  else if(db && dir)
+    pool.query("SELECT * "+
+      "FROM "+dir, (err, row) => {
+      var rows = JSON.stringify(row)
+      res.render("ui", { data: rows, dir: dir })
     })
   else res.redirect("connect")
 })
