@@ -36,7 +36,7 @@ input[type=text], input[type=password], input[type=number]{
   margin-bottom: 8px;
 }
 input[name=dbhost]{
-  width: 175px;
+  width: 173px;
 }
 input[name=dbport]{
   width: 60px;
