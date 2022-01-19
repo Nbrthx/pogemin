@@ -82,7 +82,7 @@ app.post("/conn", (req, res) => {
       res.redirect("/")
     }else{
       res.redirect("connect")
-      pool.end()
+      return err
     }
   })
 })
