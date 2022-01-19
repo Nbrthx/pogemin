@@ -81,8 +81,7 @@ app.post("/conn", (req, res) => {
       res.cookie("db", conf, { signed: true })
       res.redirect("/")
     }else{
-      res.redirect("connect")
-      return
+      return res.redirect("connect")
     }
   })
 })
