@@ -76,11 +76,12 @@ app.post("/conn", (req, res) => {
 
   var pool = new Pool(conf)
 
-  pool.query("SELECT NOW()", (err, row) => {
+  pool.connect((err, row) => {
     if(!err){
       res.cookie("db", conf, { signed: true })
       res.redirect("/")
     }else{
+      pool.end()
       return res.redirect("connect")
     }
   })
