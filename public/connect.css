@@ -27,19 +27,19 @@ input[type=button], input[type=submit]{
   border-radius: 8px;
 }
 input[type=text], input[type=password], input[type=number]{
-  width: 100%;
+  width: 280px;
   background: #235;
   border: 1px solid #132;
   color: #2f4;
   border-radius: 8px;
-  padding: 4px 0px;
+  padding: 4px 16px;
   margin-bottom: 8px;
 }
 input[name=dbhost]{
-  width: 70%;
+  width: 186px;
 }
 input[name=dbport]{
-  width: 30%;
+  width: 66px;
 }
 a{
   color: #2f4;
