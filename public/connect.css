@@ -39,7 +39,7 @@ input[name=dbhost]{
   width: 164px;
 }
 input[name=dbport]{
-  width: 64px;
+  width: 60px;
 }
 a{
   color: #2f4;
